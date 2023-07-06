@@ -7,6 +7,19 @@ version = {}
 with open("vectorbt/_version.py", encoding="utf-8") as fp:
     exec(fp.read(), version)
 
+full_win=['yfinance>=0.1.63',
+            'python-binance',
+            'ccxt',
+            'alpaca-trade-api==1.4.3',
+            'ta',
+            'pandas_ta',
+            'TA-Lib',
+            'python-telegram-bot>=13.4',  # LGPLv3
+            'quantstats>=0.0.37'
+        ]
+
+full=full_win+['ray>=1.4.1']
+
 setup(
     name='vectorbt',
     version=version['__version__'],
@@ -42,18 +55,8 @@ setup(
         'mypy_extensions'
     ],
     extras_require={
-        'full': [
-            'yfinance>=0.1.63',
-            'python-binance',
-            'ccxt',
-            'alpaca-trade-api==1.4.3',
-            'ray>=1.4.1',
-            'ta',
-            'pandas_ta',
-            'TA-Lib',
-            'python-telegram-bot>=13.4',  # LGPLv3
-            'quantstats>=0.0.37'
-        ],
+        'full': full,
+        'full-win' : full_win,
         'cov': [
             'pytest',
             'pytest-cov',
