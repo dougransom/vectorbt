@@ -55,8 +55,18 @@ setup(
         'mypy_extensions'
     ],
     extras_require={
-        'full': full,
-        'full-win' : full_win,
+        'full': [
+            'yfinance>=0.2.22',
+            'python-binance',
+            'ccxt>=4.0.14',
+            'alpaca-trade-api==1.4.3',
+            'ray>=1.4.1',
+            'ta',
+            'pandas_ta',
+            'TA-Lib',
+            'python-telegram-bot>=13.4,<20.0',  # LGPLv3
+            'quantstats>=0.0.37'
+        ],
         'cov': [
             'pytest',
             'pytest-cov',
